@@ -17,3 +17,48 @@
 
   http://www.imparareaprogrammare.it
 */
+namespace esercizidiprogrammazione_csharp_gattiinfila;
+
+public class Gattiinfila
+{
+    int totaleGatti, gattiPerFila;
+    int totaleFile, gattiMancanti;
+    public void soluzioneGattiInFila()
+    {
+        letturaInput();
+        calcolaRisultato();
+        stampaRisultato();
+    }
+
+    private void letturaInput()
+    {
+
+        Console.WriteLine("Inserire numero totale di gatti : ");
+        while(!(int.TryParse(Console.ReadLine(), out totaleGatti))) {
+            Console.WriteLine("Riprova. Inserire un numero valido");
+        }
+        Console.WriteLine("Inserire numero di gatti presenti in ogni fila : ");
+        while (!(int.TryParse(Console.ReadLine(), out gattiPerFila)))
+        {
+            Console.WriteLine("Riprova. Inserire un numero valido");
+        }
+
+    }
+    
+    private void calcolaRisultato()
+    {
+        totaleFile = (int) Math.Ceiling((double) totaleGatti / (double) gattiPerFila);
+        Math.DivRem(totaleGatti,gattiPerFila, out gattiMancanti);
+        if (gattiMancanti > 0)
+        {
+            gattiMancanti = gattiPerFila - gattiMancanti; 
+        }
+
+    }
+
+    private void stampaRisultato()
+    {
+        Console.WriteLine($"numero di file : {totaleFile}");
+        Console.WriteLine($"gatti mancanti : {gattiMancanti}");
+    }
+}

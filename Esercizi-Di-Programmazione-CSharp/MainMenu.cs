@@ -2,22 +2,24 @@
 using esercizidiprogrammazione_csharp_ContaIlTempo;
 using esercizidiprogrammazione_csharp_quantianniha;
 using esercizidiprogrammazione_csharp_sommaemedia;
+using esercizidiprogrammazione_csharp_gattiinfila;
 using System;
 public class MenuProgramma
 {
     private SommaEMedia? SommaEMediaInstance;
     private QuantiAnniHa? quantiAnniHaInstance;
     private ContaIlTempo? contaIlTempoInstance;
+    private Gattiinfila? gattiinfilaInstance;
 
     Dictionary<string, string>? listaEsercizi;
-    int scelta; bool sceltaNonValida;
-    private MenuProgramma menuProgramma;
+    int scelta;
 
     public MenuProgramma()
     {
         SommaEMediaInstance = new SommaEMedia();
         quantiAnniHaInstance = new QuantiAnniHa();
         contaIlTempoInstance = new ContaIlTempo();
+        gattiinfilaInstance = new Gattiinfila();
     }
 
     public void MenuProgrammaScelta()
@@ -35,6 +37,7 @@ public class MenuProgramma
         listaEsercizi.Add("1", "Somma e media");
         listaEsercizi.Add("2", "Quanti anni ha");
         listaEsercizi.Add("3", "Conta il tempo");
+        listaEsercizi.Add("4", "Gatti in fila");
     }
 
     private void stampaMenu()
@@ -54,7 +57,6 @@ public class MenuProgramma
     {
         while (!int.TryParse(Console.ReadLine(), out scelta))
         {
-            sceltaNonValida = true;
             stampaMenu();
         }
         return scelta;
@@ -83,6 +85,12 @@ public class MenuProgramma
 
                 }
                 break;
+            case 4:
+                if (gattiinfilaInstance != null)
+                {
+                    gattiinfilaInstance.soluzioneGattiInFila();
+                }
+                break;
             default:
                 break;
         }
@@ -109,7 +117,6 @@ public class MenuProgramma
             SommaEMediaInstance = null; quantiAnniHaInstance = null;
             listaEsercizi = null;
             scelta = 0;
-            sceltaNonValida = false;
             MenuProgramma menuProgramma = new MenuProgramma();
             menuProgramma.MenuProgrammaScelta();
         }
