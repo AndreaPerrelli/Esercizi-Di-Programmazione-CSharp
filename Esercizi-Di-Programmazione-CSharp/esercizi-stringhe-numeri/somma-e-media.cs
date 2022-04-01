@@ -20,7 +20,7 @@ namespace esercizidiprogrammazione_csharp_sommaemedia;
 
 public class SommaEMedia {
 
-    int somma; // somma da restituire in output
+    float somma; // somma da restituire in output
     float media; // media da restituire in output
     Dictionary<string, int>? chiaveValoreInsieme { get; set; } // Dizionario in cui mi salvo coppia {nomenumero - valorenumero}
     bool numeroInseritoNonèValido; // variabile di controllo per scanner dei numeri.
@@ -72,7 +72,7 @@ public class SommaEMedia {
 
     private void calcoloSommaEMedia()
     {
-        int indiceMedia = 1; //indice con cui mi salvo il valore dei numeri addizionati in modo da sapere per quanto dovrò dividere per avere la media.
+        float indiceMedia = 1; //indice con cui mi salvo il valore dei numeri addizionati in modo da sapere per quanto dovrò dividere per avere la media.
         // calcolo somma
         // controllo che il dizionario chiaveValoreInsieme non sia vuoto, quindi che ci siano i numeri da addizionare.
         if (chiaveValoreInsieme != null)
@@ -103,7 +103,7 @@ public class SommaEMedia {
         Console.WriteLine(Environment.NewLine);
         Console.WriteLine($"Il risultato della somma dei numeri è : {somma}");
         Console.WriteLine(Environment.NewLine);
-        Console.WriteLine($"Il risultato della media della somma è : {media}");
+        Console.WriteLine($"Il risultato della media della somma è : {media:F3}");
         Console.WriteLine(Environment.NewLine);
     }
 
