@@ -26,18 +26,10 @@ public class ContaIlTempo{
 
     public void soluzioneContaIlTempo () 
     {
-        inizializzaVariabili();
         inizializzaDescrizioneEsercizio();
         totaleSecondi = leggiTotaleSecondi();
         (ore, minuti, secondi) = calcoloRisultato();
         visualizzaRisultato();
-    }
-
-    private void inizializzaVariabili()
-    {
-        totaleSecondi = 0;
-        ore = 0; minuti = 0; secondi = 0;
-
     }
 
     private int leggiTotaleSecondi()
