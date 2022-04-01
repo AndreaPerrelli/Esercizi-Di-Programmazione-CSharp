@@ -2,10 +2,13 @@
 using System;
 using esercizidiprogrammazione_csharp_sommaemedia;
 using esercizidiprogrammazione_csharp_quantianniha;
+using esercizidiprogrammazione_csharp_ContaIlTempo;
 public class MenuProgramma
 {
 	private SommaEMedia? SommaEMediaInstance;
 	private QuantiAnniHa? quantiAnniHaInstance;
+	private ContaIlTempo? contaIlTempoInstance;
+
 	Dictionary<string, string>? listaEsercizi;
 	int scelta; bool sceltaNonValida;
 	private MenuProgramma menuProgramma;
@@ -14,6 +17,7 @@ public class MenuProgramma
 	{
 		SommaEMediaInstance = new SommaEMedia();
 		quantiAnniHaInstance = new QuantiAnniHa();
+		contaIlTempoInstance = new ContaIlTempo();
 	}
 
 	public void MenuProgrammaScelta()
@@ -30,6 +34,7 @@ public class MenuProgramma
 		listaEsercizi = new Dictionary<string, string>();
 		listaEsercizi.Add("1", "Somma e media");
 		listaEsercizi.Add("2", "Quanti anni ha");
+		listaEsercizi.Add("3", "Conta il tempo");
     }
 
 	private void stampaMenu()
@@ -69,6 +74,13 @@ public class MenuProgramma
 				if (quantiAnniHaInstance != null)
                 {
 					quantiAnniHaInstance.soluzioneQuantiAnniHa();
+				}
+				break;
+			case 3:
+				if (contaIlTempoInstance != null)
+				{
+					contaIlTempoInstance.soluzioneContaIlTempo();
+
 				}
 				break;
 			default:
