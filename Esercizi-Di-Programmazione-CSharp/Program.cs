@@ -1,6 +1,7 @@
 ﻿namespace esercizidiprogrammazione_csharp_MainProgram;
 using esercizidiprogrammazione_csharp_MainMenu;
-public class MainProgram{
+public class MainProgram
+{
 
     public MenuProgramma mainMenuInstance;
     public MainProgram()

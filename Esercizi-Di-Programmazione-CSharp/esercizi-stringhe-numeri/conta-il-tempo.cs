@@ -16,7 +16,8 @@
 namespace esercizidiprogrammazione_csharp_ContaIlTempo;
 
 
-public class ContaIlTempo{
+public class ContaIlTempo
+{
 
     float totaleSecondi;
     float ore, minuti, secondi;
@@ -24,7 +25,7 @@ public class ContaIlTempo{
     const float minutiInUnOra = 60;
     const float secondiInUnOra = 3600;
 
-    public void soluzioneContaIlTempo () 
+    public void soluzioneContaIlTempo()
     {
         inizializzaDescrizioneEsercizio();
         totaleSecondi = leggiTotaleSecondi();
@@ -36,7 +37,7 @@ public class ContaIlTempo{
     {
         int result;
         Console.WriteLine("Inserisci numero totale dei secondi : ");
-        while(!(int.TryParse(Console.ReadLine(), out result)))
+        while (!(int.TryParse(Console.ReadLine(), out result)))
         {
             Console.WriteLine("Input incorretto");
             Console.WriteLine("Inserire numero totale dei secondi : ");
@@ -56,9 +57,9 @@ public class ContaIlTempo{
 
     private void visualizzaRisultato()
     {
-        int oreRisultato = (int) ore;
-        int minutiRisultato = (int) minuti;
-        int secondiRisultato = (int) secondi;
+        int oreRisultato = (int)ore;
+        int minutiRisultato = (int)minuti;
+        int secondiRisultato = (int)secondi;
 
         Console.WriteLine($"Output : {oreRisultato} ore, {minutiRisultato} minuti e {secondiRisultato} secondi . ");
     }

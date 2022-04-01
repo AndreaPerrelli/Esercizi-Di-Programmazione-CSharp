@@ -92,5 +92,5 @@ Soluzione scritta da Andrea Antonio Perrelli. © 2022. All rights reserved.
 ");
         Console.WriteLine(Environment.NewLine);
     }
-    
+
 }

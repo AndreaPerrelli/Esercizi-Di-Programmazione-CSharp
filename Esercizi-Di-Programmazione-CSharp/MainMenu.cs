@@ -1,117 +1,117 @@
 ﻿namespace esercizidiprogrammazione_csharp_MainMenu;
-using System;
-using esercizidiprogrammazione_csharp_sommaemedia;
-using esercizidiprogrammazione_csharp_quantianniha;
 using esercizidiprogrammazione_csharp_ContaIlTempo;
+using esercizidiprogrammazione_csharp_quantianniha;
+using esercizidiprogrammazione_csharp_sommaemedia;
+using System;
 public class MenuProgramma
 {
-	private SommaEMedia? SommaEMediaInstance;
-	private QuantiAnniHa? quantiAnniHaInstance;
-	private ContaIlTempo? contaIlTempoInstance;
+    private SommaEMedia? SommaEMediaInstance;
+    private QuantiAnniHa? quantiAnniHaInstance;
+    private ContaIlTempo? contaIlTempoInstance;
 
-	Dictionary<string, string>? listaEsercizi;
-	int scelta; bool sceltaNonValida;
-	private MenuProgramma menuProgramma;
+    Dictionary<string, string>? listaEsercizi;
+    int scelta; bool sceltaNonValida;
+    private MenuProgramma menuProgramma;
 
-	public MenuProgramma()
-	{
-		SommaEMediaInstance = new SommaEMedia();
-		quantiAnniHaInstance = new QuantiAnniHa();
-		contaIlTempoInstance = new ContaIlTempo();
-	}
-
-	public void MenuProgrammaScelta()
+    public MenuProgramma()
     {
-			inizializzaLista();
-			stampaMenu();
-			scelta = sceltaLista();
-			processazioneSceltaLista(scelta);
-			riavvioProgramma();
+        SommaEMediaInstance = new SommaEMedia();
+        quantiAnniHaInstance = new QuantiAnniHa();
+        contaIlTempoInstance = new ContaIlTempo();
     }
 
-	private void inizializzaLista()
+    public void MenuProgrammaScelta()
     {
-		listaEsercizi = new Dictionary<string, string>();
-		listaEsercizi.Add("1", "Somma e media");
-		listaEsercizi.Add("2", "Quanti anni ha");
-		listaEsercizi.Add("3", "Conta il tempo");
+        inizializzaLista();
+        stampaMenu();
+        scelta = sceltaLista();
+        processazioneSceltaLista(scelta);
+        riavvioProgramma();
     }
 
-	private void stampaMenu()
+    private void inizializzaLista()
     {
-		Console.Title = "Esercizi di Programmazione in C Sharp";
-		Console.WriteLine("Scegliere esercizio da mostrare : ");
-		if (listaEsercizi != null)
+        listaEsercizi = new Dictionary<string, string>();
+        listaEsercizi.Add("1", "Somma e media");
+        listaEsercizi.Add("2", "Quanti anni ha");
+        listaEsercizi.Add("3", "Conta il tempo");
+    }
+
+    private void stampaMenu()
+    {
+        Console.Title = "Esercizi di Programmazione in C Sharp";
+        Console.WriteLine("Scegliere esercizio da mostrare : ");
+        if (listaEsercizi != null)
         {
-			foreach (var esercizio in listaEsercizi)
-			{
-				Console.WriteLine($"{esercizio.Key} : {esercizio.Value}");
-			}
-		}
-	}
+            foreach (var esercizio in listaEsercizi)
+            {
+                Console.WriteLine($"{esercizio.Key} : {esercizio.Value}");
+            }
+        }
+    }
 
-	private int sceltaLista()
+    private int sceltaLista()
     {
-		while (!int.TryParse(Console.ReadLine(), out scelta))
-		{
-			sceltaNonValida = true;
-			stampaMenu();
-		}
-		return scelta;
-	}
+        while (!int.TryParse(Console.ReadLine(), out scelta))
+        {
+            sceltaNonValida = true;
+            stampaMenu();
+        }
+        return scelta;
+    }
 
-	private void processazioneSceltaLista(int scelta)
+    private void processazioneSceltaLista(int scelta)
     {
         switch (scelta)
         {
             case 1:
-				if (SommaEMediaInstance != null)
+                if (SommaEMediaInstance != null)
                 {
-					SommaEMediaInstance.soluzioneSommaEMedia();
-				}
-				break;
-			case 2:
-				if (quantiAnniHaInstance != null)
+                    SommaEMediaInstance.soluzioneSommaEMedia();
+                }
+                break;
+            case 2:
+                if (quantiAnniHaInstance != null)
                 {
-					quantiAnniHaInstance.soluzioneQuantiAnniHa();
-				}
-				break;
-			case 3:
-				if (contaIlTempoInstance != null)
-				{
-					contaIlTempoInstance.soluzioneContaIlTempo();
+                    quantiAnniHaInstance.soluzioneQuantiAnniHa();
+                }
+                break;
+            case 3:
+                if (contaIlTempoInstance != null)
+                {
+                    contaIlTempoInstance.soluzioneContaIlTempo();
 
-				}
-				break;
-			default:
+                }
+                break;
+            default:
                 break;
         }
     }
 
-	private void riavvioProgramma()
+    private void riavvioProgramma()
     {
-		Console.WriteLine("Premi esc per uscire, invio per tornare al menu principale.");
-		ConsoleKey keyPressed = Console.ReadKey().Key;
-		while (!(keyPressed == ConsoleKey.Enter) && !(keyPressed == ConsoleKey.Escape))
+        Console.WriteLine("Premi esc per uscire, invio per tornare al menu principale.");
+        ConsoleKey keyPressed = Console.ReadKey().Key;
+        while (!(keyPressed == ConsoleKey.Enter) && !(keyPressed == ConsoleKey.Escape))
         {
-			Console.WriteLine("Errore!");
-			Console.WriteLine("Premi esc per uscire, invio per tornare al menu principale.");
-			keyPressed = Console.ReadKey().Key;
-		}
-
-		if(keyPressed == ConsoleKey.Escape)
-        {
-			return;
+            Console.WriteLine("Errore!");
+            Console.WriteLine("Premi esc per uscire, invio per tornare al menu principale.");
+            keyPressed = Console.ReadKey().Key;
         }
-		if (keyPressed == ConsoleKey.Enter)
+
+        if (keyPressed == ConsoleKey.Escape)
         {
-			Console.Clear();
-			SommaEMediaInstance = null; quantiAnniHaInstance = null;
-			listaEsercizi = null;
-			scelta = 0;
-			sceltaNonValida = false;
-			MenuProgramma menuProgramma = new MenuProgramma();
-			menuProgramma.MenuProgrammaScelta();
-		}
+            return;
+        }
+        if (keyPressed == ConsoleKey.Enter)
+        {
+            Console.Clear();
+            SommaEMediaInstance = null; quantiAnniHaInstance = null;
+            listaEsercizi = null;
+            scelta = 0;
+            sceltaNonValida = false;
+            MenuProgramma menuProgramma = new MenuProgramma();
+            menuProgramma.MenuProgrammaScelta();
+        }
     }
 }

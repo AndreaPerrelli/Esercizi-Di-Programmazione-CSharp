@@ -18,7 +18,8 @@
 
 namespace esercizidiprogrammazione_csharp_sommaemedia;
 
-public class SommaEMedia {
+public class SommaEMedia
+{
 
     float somma; // somma da restituire in output
     float media; // media da restituire in output
@@ -46,7 +47,7 @@ public class SommaEMedia {
                vado a valorizzare la mia variabile di controllo numeroInseritoNonValido a true, per poi chiamare
                il metodo stampa che mi permette di mostrare a schermo l'errore e richiedere che venga inserito un valore numerico. 
             */
-            foreach (var chiave in chiaveValoreInsieme) 
+            foreach (var chiave in chiaveValoreInsieme)
             {
                 Console.WriteLine($"Inserire il numero {chiave.Key} :");
                 while (!int.TryParse(Console.ReadLine(), out n))
@@ -83,7 +84,7 @@ public class SommaEMedia {
             */
             foreach (var valore in chiaveValoreInsieme)
             {
-                somma += valore.Value; 
+                somma += valore.Value;
                 indiceMedia++;
             }
             indiceMedia--; // poichè avevo inizializzato indiceMedia ad 1, per avere il corretto valore di numeri addizionati sottraggo il risultato per uno.
