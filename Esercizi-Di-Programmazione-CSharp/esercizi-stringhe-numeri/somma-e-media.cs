@@ -28,6 +28,7 @@ public class SommaEMedia {
     public void soluzioneSommaEMedia()
     {
         inizializzaVariabili(); // chiamo il metodo di inizializzazione delle variabili
+        inizializzaDescrizioneEsercizio();
         leggiNumeri(); // chiamo il metodo di lettura dei numeri
         calcoloSommaEMedia(); // chiamo il metodo di calcolo della somma e della media dei numeri letti.
 
@@ -104,6 +105,27 @@ public class SommaEMedia {
         Console.WriteLine($"Il risultato della somma dei numeri è : {somma}");
         Console.WriteLine(Environment.NewLine);
         Console.WriteLine($"Il risultato della media della somma è : {media:F3}");
+        Console.WriteLine(Environment.NewLine);
+    }
+
+    private void inizializzaDescrizioneEsercizio()
+    {
+        Console.Title = "Esercizio numero 1 : Somma e Media";
+        Console.Clear();
+        Console.WriteLine(Environment.NewLine);
+        Console.WriteLine(@"
+  Somma e media
+  Scrivi un programma che dati 5 numeri restituisca in output la somma e la media.
+
+  Esempio:
+    Input: a = 1, b = 2, c = 3, d = 4, e = 5
+    Output: somma = 15, media = 3
+  
+  http://www.imparareaprogrammare.it
+
+  Soluzione scritta da Andrea Antonio Perrelli. © 2022. All rights reserved.
+
+");
         Console.WriteLine(Environment.NewLine);
     }
 

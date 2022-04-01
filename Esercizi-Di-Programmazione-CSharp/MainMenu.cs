@@ -34,6 +34,7 @@ public class MenuProgramma
 
 	private void stampaMenu()
     {
+		Console.Title = "Esercizi di Programmazione in C Sharp";
 		Console.WriteLine("Scegliere esercizio da mostrare : ");
 		if (listaEsercizi != null)
         {
