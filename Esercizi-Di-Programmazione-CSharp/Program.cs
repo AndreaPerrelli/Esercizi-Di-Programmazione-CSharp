@@ -1,16 +1,17 @@
-﻿using esercizidiprogrammazione_csharp_sommaemedia;
-
+﻿namespace esercizidiprogrammazione_csharp_MainProgram;
+using esercizidiprogrammazione_csharp_MainMenu;
 public class MainProgram{
 
-    private SommaEMedia SommaEMediaInstance;
+    public MenuProgramma mainMenuInstance;
     public MainProgram()
     {
-        SommaEMediaInstance = new SommaEMedia();
+        mainMenuInstance = new MenuProgramma();
     }
     static void Main()
     {
         MainProgram instance = new MainProgram();
-        instance.SommaEMediaInstance.soluzioneSommaEMedia();
+        //instance.SommaEMediaInstance.soluzioneSommaEMedia();
+        instance.mainMenuInstance.MenuProgrammaScelta();
     }
 }
 
