@@ -22,12 +22,16 @@ public partial class MaggioreEMinore {
 
     public void MaxMinSolution()
     {
+        // reading input
         ReadInput();
+        //checking inputNumbers existence
         if (inputNumbers != null)
         {
+            // calculate value of max and min
             maxNumber = CalculateMaxValue(inputNumbers);
             minNumber = CalculateMinValue(inputNumbers);
         }
+        // print result
         PrintResult(maxNumber, minNumber);
     }
 
@@ -37,11 +41,13 @@ public partial class MaggioreEMinore {
         inputNumbers = new List<int>();
         for (int i = 0; i < 4; i++)
         {            
+            //Reading Input, checking if it is an int otherwise prompt user to retry 
             Console.WriteLine("Inserisci numero");
             while(!(int.TryParse(Console.ReadLine(), out number)))
             {
                 Console.WriteLine("Non hai inserito un numero! Riprova");
             }
+            // adding input to a List
             inputNumbers.Add(number);
         }
 
@@ -49,16 +55,19 @@ public partial class MaggioreEMinore {
 
     private int CalculateMaxValue(List<int> inputNumbers)
     {
+        // returning Max value of the List
         return inputNumbers.Max();
     }
 
     private int CalculateMinValue(List<int> inputNumbers)
     {
+        // returning Min value of the List
         return inputNumbers.Min();
     }
 
     private void PrintResult(int max, int min)
     {
+        // Printing the result in console
         Console.WriteLine($"Il massimo è {max}, il minimo è {min}");
 
     }
