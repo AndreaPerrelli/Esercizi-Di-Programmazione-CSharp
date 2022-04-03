@@ -3,6 +3,7 @@ using esercizidiprogrammazione_csharp_ContaIlTempo;
 using esercizidiprogrammazione_csharp_quantianniha;
 using esercizidiprogrammazione_csharp_sommaemedia;
 using esercizidiprogrammazione_csharp_gattiinfila;
+using esercizidiprogrammazione_csharp_pariodispari;
 using System;
 public class MenuProgramma
 {
@@ -10,16 +11,13 @@ public class MenuProgramma
     private QuantiAnniHa? quantiAnniHaInstance;
     private ContaIlTempo? contaIlTempoInstance;
     private Gattiinfila? gattiinfilaInstance;
+    private PariODispari? pariODispariInstance;
 
     Dictionary<string, string>? listaEsercizi;
     int scelta;
 
     public MenuProgramma()
-    {
-        SommaEMediaInstance = new SommaEMedia();
-        quantiAnniHaInstance = new QuantiAnniHa();
-        contaIlTempoInstance = new ContaIlTempo();
-        gattiinfilaInstance = new Gattiinfila();
+    {      
     }
 
     public void MenuProgrammaScelta()
@@ -38,6 +36,7 @@ public class MenuProgramma
         listaEsercizi.Add("2", "Quanti anni ha");
         listaEsercizi.Add("3", "Conta il tempo");
         listaEsercizi.Add("4", "Gatti in fila");
+        listaEsercizi.Add("5", "Pari o dispari");
     }
 
     private void stampaMenu()
@@ -67,18 +66,21 @@ public class MenuProgramma
         switch (scelta)
         {
             case 1:
+                SommaEMediaInstance = new SommaEMedia();
                 if (SommaEMediaInstance != null)
                 {
                     SommaEMediaInstance.soluzioneSommaEMedia();
                 }
                 break;
             case 2:
+                quantiAnniHaInstance = new QuantiAnniHa();
                 if (quantiAnniHaInstance != null)
                 {
                     quantiAnniHaInstance.soluzioneQuantiAnniHa();
                 }
                 break;
             case 3:
+                contaIlTempoInstance = new ContaIlTempo();
                 if (contaIlTempoInstance != null)
                 {
                     contaIlTempoInstance.soluzioneContaIlTempo();
@@ -86,9 +88,17 @@ public class MenuProgramma
                 }
                 break;
             case 4:
+                gattiinfilaInstance = new Gattiinfila();
                 if (gattiinfilaInstance != null)
                 {
                     gattiinfilaInstance.soluzioneGattiInFila();
+                }
+                break;
+            case 5:
+                pariODispariInstance = new PariODispari();
+                if (pariODispariInstance != null)
+                {
+                    pariODispariInstance.soluzionePariODispari();
                 }
                 break;
             default:
