@@ -83,6 +83,7 @@ namespace esercizidiprogrammazione_csharp_WhatDayIsToday
         {
             
             Console.WriteLine(result);
+            return;
         }
 
         enum DaysOfTheWeek
