@@ -6,6 +6,7 @@ using esercizidiprogrammazione_csharp_gattiinfila;
 using esercizidiprogrammazione_csharp_pariodispari;
 using esercizidiprogrammazione_csharp_MaggioreEMinore;
 using esercizidiprogrammazione_csharp_Calculator;
+using esercizidiprogrammazione_csharp_CakeMenu;
 using System;
 public class MenuProgramma
 {
@@ -16,6 +17,7 @@ public class MenuProgramma
     private PariODispari? pariODispariInstance;
     private MaggioreEMinore? maggioreEMinoreInstance;
     private Calculator? CalculatorInstance;
+    private CakeMenu? CakeMenuInstance;
     Dictionary<string, string>? listaEsercizi;
     int scelta;
 
@@ -42,6 +44,7 @@ public class MenuProgramma
         listaEsercizi.Add("5", "Pari o dispari");
         listaEsercizi.Add("6", "Maggiore e Minore");
         listaEsercizi.Add("7", "Calcolatrice");
+        listaEsercizi.Add("8", "Menu dei dolci");
     }
 
     private void stampaMenu()
@@ -118,6 +121,13 @@ public class MenuProgramma
                 if (CalculatorInstance != null)
                 {
                     CalculatorInstance.CalculatorSolution();
+                }
+                break;
+            case 8:
+                CakeMenuInstance = new CakeMenu();
+                if (CakeMenuInstance != null)
+                {
+                    CakeMenuInstance.CakeMenuSolution();
                 }
                 break;
             default:

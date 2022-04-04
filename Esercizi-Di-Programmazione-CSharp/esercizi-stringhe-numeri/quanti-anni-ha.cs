@@ -20,7 +20,6 @@ namespace esercizidiprogrammazione_csharp_quantianniha;
 public class QuantiAnniHa
 {
     int annoCorrente, annoDiNascita, età, anniMancanti;
-    bool annoInseritoNonValido;
 
     public void soluzioneQuantiAnniHa()
     {
@@ -42,14 +41,12 @@ public class QuantiAnniHa
         Console.WriteLine("Inserisci anno corrente :");
         while (!int.TryParse(Console.ReadLine(), out annoCorrente))
         {
-            annoInseritoNonValido = true;
             stampa();
         }
         Console.WriteLine(Environment.NewLine);
         Console.WriteLine("Inserisci anno di nascità :");
         while (!int.TryParse(Console.ReadLine(), out annoDiNascita))
         {
-            annoInseritoNonValido = true;
             stampa();
         }
     }
