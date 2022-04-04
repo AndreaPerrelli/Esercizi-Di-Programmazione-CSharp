@@ -8,6 +8,7 @@ using esercizidiprogrammazione_csharp_MaggioreEMinore;
 using esercizidiprogrammazione_csharp_Calculator;
 using esercizidiprogrammazione_csharp_CakeMenu;
 using esercizidiprogrammazione_csharp_CountDigits;
+using esercizidiprogrammazione_csharp_DoTheProfessor;
 using System;
 public class MenuProgramma
 {
@@ -20,6 +21,7 @@ public class MenuProgramma
     private Calculator? CalculatorInstance;
     private CakeMenu? CakeMenuInstance;
     private CountDigits? CountDigitsInstance;
+    private DoTheProfessor? doTheProfessorInstance;
     Dictionary<string, string>? listaEsercizi;
     int scelta;
 
@@ -48,6 +50,7 @@ public class MenuProgramma
         listaEsercizi.Add("7", "Calcolatrice");
         listaEsercizi.Add("8", "Menu dei dolci");
         listaEsercizi.Add("9", "Conta cifre");
+        listaEsercizi.Add("10", "Fai il professore");
     }
 
     private void stampaMenu()
@@ -138,6 +141,13 @@ public class MenuProgramma
                 if (CountDigitsInstance != null)
                 {
                     CountDigitsInstance.CountDigitsSolution();
+                }
+                break;
+            case 10:
+                doTheProfessorInstance = new DoTheProfessor();
+                if (doTheProfessorInstance != null)
+                {
+                    doTheProfessorInstance.DoTheProfessorSolution();
                 }
                 break;
             default:
