@@ -5,6 +5,7 @@ using esercizidiprogrammazione_csharp_sommaemedia;
 using esercizidiprogrammazione_csharp_gattiinfila;
 using esercizidiprogrammazione_csharp_pariodispari;
 using esercizidiprogrammazione_csharp_MaggioreEMinore;
+using esercizidiprogrammazione_csharp_Calculator;
 using System;
 public class MenuProgramma
 {
@@ -14,6 +15,7 @@ public class MenuProgramma
     private Gattiinfila? gattiinfilaInstance;
     private PariODispari? pariODispariInstance;
     private MaggioreEMinore? maggioreEMinoreInstance;
+    private Calculator? CalculatorInstance;
     Dictionary<string, string>? listaEsercizi;
     int scelta;
 
@@ -39,6 +41,7 @@ public class MenuProgramma
         listaEsercizi.Add("4", "Gatti in fila");
         listaEsercizi.Add("5", "Pari o dispari");
         listaEsercizi.Add("6", "Maggiore e Minore");
+        listaEsercizi.Add("7", "Calcolatrice");
     }
 
     private void stampaMenu()
@@ -108,6 +111,13 @@ public class MenuProgramma
                 if (maggioreEMinoreInstance != null)
                 {
                     maggioreEMinoreInstance.MaxMinSolution();
+                }
+                break;
+            case 7:
+                CalculatorInstance = new Calculator();
+                if (CalculatorInstance != null)
+                {
+                    CalculatorInstance.CalculatorSolution();
                 }
                 break;
             default:
