@@ -11,6 +11,7 @@ using esercizidiprogrammazione_csharp_CountDigits;
 using esercizidiprogrammazione_csharp_DoTheProfessor;
 using esercizidiprogrammazione_csharp_GuessNumber;
 using esercizidiprogrammazione_csharp_WhatDayIsToday;
+using esercizidiprogrammazione_csharp_ColdOrHot;
 using System;
 public class MenuProgramma
 {
@@ -26,6 +27,8 @@ public class MenuProgramma
     private DoTheProfessor? doTheProfessorInstance;
     private GuessNumber? guessNumberInstance;
     private WhatDayIsToday? whatDayIsTodayInstance;
+    private ColdOrHot? coldOrHotInstance;
+   
     Dictionary<string, string>? listaEsercizi;
     int scelta;
 
@@ -57,6 +60,7 @@ public class MenuProgramma
         listaEsercizi.Add("10", "Fai il professore");
         listaEsercizi.Add("11", "Chi la azzecca");
         listaEsercizi.Add("12", "Che giorno oggi");
+        listaEsercizi.Add("13", "Caldo o Freddo");
     }
 
     private void stampaMenu()
@@ -145,6 +149,11 @@ public class MenuProgramma
                 whatDayIsTodayInstance = new WhatDayIsToday();
                 if (whatDayIsTodayInstance != null)
                     whatDayIsTodayInstance.WhatDayIsTodaySolution();
+                break;
+            case 13:
+                coldOrHotInstance = new ColdOrHot();
+                if (coldOrHotInstance != null) 
+                    coldOrHotInstance.ColdOrHotSolution();
                 break;
             default:
                 break;
