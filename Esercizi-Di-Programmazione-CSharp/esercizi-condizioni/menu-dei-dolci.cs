@@ -44,11 +44,12 @@ namespace esercizidiprogrammazione_csharp_CakeMenu
 
         private void printMenu()
         {
-            Console.WriteLine(@"    MENU:
+            const string Value = @"    MENU:
     0.Tiramisù
     1.Torta della nonna
     2.Cheesecake alla nutella
-    3.Macedonia");
+    3.Macedonia";
+            Console.WriteLine(Value);
         }
 
         private Menù readInput()
@@ -73,7 +74,7 @@ namespace esercizidiprogrammazione_csharp_CakeMenu
             Console.Title = "Esercizio numero 1 : Somma e Media";
             Console.Clear();
             Console.WriteLine(Environment.NewLine);
-            Console.WriteLine(@"
+            const string Value = @"
   Menu dei dolci
   Scrivi un programma che dato il seguente menu (da stampare):
     MENU:
@@ -98,7 +99,8 @@ namespace esercizidiprogrammazione_csharp_CakeMenu
 
   Soluzione scritta da Andrea Antonio Perrelli. © 2022. All rights reserved.
 
-");
+";
+            Console.WriteLine(Value);
         }
 
         enum Menù

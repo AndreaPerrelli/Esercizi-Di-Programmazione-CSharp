@@ -35,7 +35,7 @@ namespace esercizidiprogrammazione_csharp_DoTheProfessor
         {
             inizializzaDescrizioneEsercizio();
             n = ReadInput();
-            grade = DetermineVote(n);
+            grade = DetermineVoteUsingIf(n);
             PrintResult();
         }
 
@@ -51,36 +51,38 @@ namespace esercizidiprogrammazione_csharp_DoTheProfessor
             return n;
         }
 
-        private PossibleGrades DetermineVote(int n)
+        private PossibleGrades DetermineVoteUsingIf(int n)
         {
             if (n<18)
-            {
                 return PossibleGrades.INSUFFICIENT;
-            } 
             else if (n>=18 && n<21)
-            {
                 return PossibleGrades.SUFFICIENT;
-            } 
             else if (n>=21 && n<24)
-            {
                 return PossibleGrades.GOOD;
-            } 
             else if (n>=24 && n<27)
-            {
                 return PossibleGrades.DISTINCT;
-            } 
             else if (n>=27 && n<=29)
-            {
                 return PossibleGrades.OPTIMAL;
-            }
             else if (n==30)
-            {
                 return PossibleGrades.EXCELLENT;
-            }
             else
-            {
                 return PossibleGrades.UNDEFINED;
-            }
+
+        }
+
+        //bonus
+        private PossibleGrades DetermineVoteUsingSwitch(int n)
+        {
+            return n switch
+            {
+                < 18 => PossibleGrades.INSUFFICIENT,
+                >= 18 and < 21 => PossibleGrades.SUFFICIENT,
+                >= 21 and < 24 => PossibleGrades.GOOD,
+                >= 24 and < 27 => PossibleGrades.DISTINCT,
+                >= 27 and <= 29 => PossibleGrades.OPTIMAL,
+                30 => PossibleGrades.EXCELLENT,
+                _ => PossibleGrades.UNDEFINED
+            };
         }
 
         private void PrintResult()

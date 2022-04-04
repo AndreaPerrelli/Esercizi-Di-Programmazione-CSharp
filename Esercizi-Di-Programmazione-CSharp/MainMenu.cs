@@ -9,6 +9,8 @@ using esercizidiprogrammazione_csharp_Calculator;
 using esercizidiprogrammazione_csharp_CakeMenu;
 using esercizidiprogrammazione_csharp_CountDigits;
 using esercizidiprogrammazione_csharp_DoTheProfessor;
+using esercizidiprogrammazione_csharp_GuessNumber;
+using esercizidiprogrammazione_csharp_WhatDayIsToday;
 using System;
 public class MenuProgramma
 {
@@ -22,6 +24,8 @@ public class MenuProgramma
     private CakeMenu? CakeMenuInstance;
     private CountDigits? CountDigitsInstance;
     private DoTheProfessor? doTheProfessorInstance;
+    private GuessNumber? guessNumberInstance;
+    private WhatDayIsToday? whatDayIsTodayInstance;
     Dictionary<string, string>? listaEsercizi;
     int scelta;
 
@@ -51,6 +55,8 @@ public class MenuProgramma
         listaEsercizi.Add("8", "Menu dei dolci");
         listaEsercizi.Add("9", "Conta cifre");
         listaEsercizi.Add("10", "Fai il professore");
+        listaEsercizi.Add("11", "Chi la azzecca");
+        listaEsercizi.Add("12", "Che giorno oggi");
     }
 
     private void stampaMenu()
@@ -82,73 +88,63 @@ public class MenuProgramma
             case 1:
                 SommaEMediaInstance = new SommaEMedia();
                 if (SommaEMediaInstance != null)
-                {
                     SommaEMediaInstance.soluzioneSommaEMedia();
-                }
                 break;
             case 2:
                 quantiAnniHaInstance = new QuantiAnniHa();
                 if (quantiAnniHaInstance != null)
-                {
                     quantiAnniHaInstance.soluzioneQuantiAnniHa();
-                }
                 break;
             case 3:
                 contaIlTempoInstance = new ContaIlTempo();
                 if (contaIlTempoInstance != null)
-                {
                     contaIlTempoInstance.soluzioneContaIlTempo();
 
-                }
                 break;
             case 4:
                 gattiinfilaInstance = new Gattiinfila();
                 if (gattiinfilaInstance != null)
-                {
                     gattiinfilaInstance.soluzioneGattiInFila();
-                }
                 break;
             case 5:
                 pariODispariInstance = new PariODispari();
                 if (pariODispariInstance != null)
-                {
                     pariODispariInstance.soluzionePariODispari();
-                }
                 break;
             case 6:
                 maggioreEMinoreInstance = new MaggioreEMinore();
                 if (maggioreEMinoreInstance != null)
-                {
                     maggioreEMinoreInstance.MaxMinSolution();
-                }
                 break;
             case 7:
                 CalculatorInstance = new Calculator();
                 if (CalculatorInstance != null)
-                {
                     CalculatorInstance.CalculatorSolution();
-                }
                 break;
             case 8:
                 CakeMenuInstance = new CakeMenu();
                 if (CakeMenuInstance != null)
-                {
                     CakeMenuInstance.CakeMenuSolution();
-                }
                 break;
             case 9:
                 CountDigitsInstance = new CountDigits();
                 if (CountDigitsInstance != null)
-                {
                     CountDigitsInstance.CountDigitsSolution();
-                }
                 break;
             case 10:
                 doTheProfessorInstance = new DoTheProfessor();
                 if (doTheProfessorInstance != null)
-                {
                     doTheProfessorInstance.DoTheProfessorSolution();
-                }
+                break;
+            case 11:
+                guessNumberInstance = new GuessNumber();
+                if (guessNumberInstance != null)
+                    guessNumberInstance.GuessNumberSolution();
+                break;
+            case 12:
+                whatDayIsTodayInstance = new WhatDayIsToday();
+                if (whatDayIsTodayInstance != null)
+                    whatDayIsTodayInstance.WhatDayIsTodaySolution();
                 break;
             default:
                 break;
