@@ -8,4 +8,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="E:\source\repos\Esercizi-Di-Programmazione-CSharp\Esercizi-Di-Programmazione-CSharp\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="E:\source\repos\Esercizi-Di-Programmazione-CSharp\Esercizi-Di-Programmazione-CSharp\.editorconfig" />
+  </ItemGroup>
+
 </Project>

@@ -11,7 +11,6 @@
 
   http://www.imparareaprogrammare.it
 */
-
 namespace esercizidiprogrammazione_csharp_CountDigits
 {
     public partial class CountDigits
