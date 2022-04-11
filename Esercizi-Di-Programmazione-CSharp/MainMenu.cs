@@ -13,6 +13,7 @@ using esercizidiprogrammazione_csharp_GuessNumber;
 using esercizidiprogrammazione_csharp_WhatDayIsToday;
 using esercizidiprogrammazione_csharp_ColdOrHot;
 using esercizidiprogrammazione_csharp_CountTable;
+using esercizidiprogrammazione_csharp_RunToTheDozen;
 using System;
 public class MenuProgramma
 {
@@ -30,6 +31,7 @@ public class MenuProgramma
     private WhatDayIsToday? whatDayIsTodayInstance;
     private ColdOrHot? coldOrHotInstance;
     private CountTable? countTableInstance;
+    private RunToTheDozen? runToTheDozenInstance;
    
     Dictionary<string, string>? listaEsercizi;
     int scelta;
@@ -64,6 +66,7 @@ public class MenuProgramma
         listaEsercizi.Add("12", "Che giorno oggi");
         listaEsercizi.Add("13", "Caldo o Freddo");
         listaEsercizi.Add("14", "Ti ricordi le tabelline?");
+        listaEsercizi.Add("15", "Rincorri la decina");
     }
 
     private void stampaMenu()
@@ -162,6 +165,11 @@ public class MenuProgramma
                 countTableInstance = new CountTable();
                 if (countTableInstance != null)
                     countTableInstance.CountTableSolution();
+                break;
+            case 15:
+                runToTheDozenInstance = new RunToTheDozen();
+                if (runToTheDozenInstance != null) 
+                    runToTheDozenInstance.RunToTheDozenSolution();
                 break;
             default:
                 break;
