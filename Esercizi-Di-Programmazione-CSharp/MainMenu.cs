@@ -14,6 +14,7 @@ using esercizidiprogrammazione_csharp_WhatDayIsToday;
 using esercizidiprogrammazione_csharp_ColdOrHot;
 using esercizidiprogrammazione_csharp_CountTable;
 using esercizidiprogrammazione_csharp_RunToTheDozen;
+using esercizidiprogrammazione_csharp_PrintingRhombus;
 using System;
 public class MenuProgramma
 {
@@ -32,6 +33,7 @@ public class MenuProgramma
     private ColdOrHot? coldOrHotInstance;
     private CountTable? countTableInstance;
     private RunToTheDozen? runToTheDozenInstance;
+    private PrintingRhombus printingRhombusInstance;
    
     Dictionary<string, string>? listaEsercizi;
     int scelta;
@@ -67,6 +69,7 @@ public class MenuProgramma
         listaEsercizi.Add("13", "Caldo o Freddo");
         listaEsercizi.Add("14", "Ti ricordi le tabelline?");
         listaEsercizi.Add("15", "Rincorri la decina");
+        listaEsercizi.Add("16", "Rombo che stampa");
     }
 
     private void stampaMenu()
@@ -170,6 +173,11 @@ public class MenuProgramma
                 runToTheDozenInstance = new RunToTheDozen();
                 if (runToTheDozenInstance != null) 
                     runToTheDozenInstance.RunToTheDozenSolution();
+                break;
+            case 16:
+                printingRhombusInstance = new PrintingRhombus();
+                if (printingRhombusInstance != null)
+                    printingRhombusInstance.PrintingRhombusSolution();
                 break;
             default:
                 break;
